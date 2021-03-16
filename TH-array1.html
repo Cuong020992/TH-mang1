@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body{
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<p style="font-style: italic; font-size: 16px">Sample Screen</p><br>
+<input type="text" id="text" size="30">
+<input id = "bntAdd" type="button" value="Add" onclick="addElementArray()">
+<input id = "btnDisplay" type="button" value="Display" onclick="showArray()">
+
+<div id="result"></div>
+</body>
+</html>
+
+<script>
+    let x = 0;
+    let array = Array();
+
+    function addElementArray(){
+
+        array[x] = document.getElementById("text").value;
+        alert("Element: " + array[x]+ "add at index: " +x);
+        x++;
+        document.getElementById("text").value = "";
+    }
+
+    function showArray(){
+        let e = "<hr/>";
+        for (let i = 0; i < array.length; i++){
+            e += "Element " +i+ " = " + array[i] + "</br>";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+</script>
